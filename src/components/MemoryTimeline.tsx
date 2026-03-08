@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const timeline = [
-  { year: "2024", title: "The Beginning", text: "The moment I realized life feels different with you in it." },
+  { year: "2021", title: "The Beginning", text: "July 3rd — the day everything changed. The moment I realized life feels different with you in it." },
   { year: "First Long Call", title: "5 Minutes?", text: "The call that was supposed to last 5 minutes… but never really ended." },
   { year: "First Fight", title: "The Realization", text: "The fight where I realized losing you would hurt more than anything." },
   { year: "Today", title: "Still Falling", text: "Still falling for you. Every single day." },
