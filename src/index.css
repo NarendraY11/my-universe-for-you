@@ -1,96 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 270 15% 5%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 270 20% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 270 20% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 330 90% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 270 40% 20%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 270 20% 15%;
+    --muted-foreground: 270 10% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 280 60% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 270 20% 18%;
+    --input: 270 20% 18%;
+    --ring: 330 90% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    --glow-pink: 330 90% 60%;
+    --glow-purple: 280 60% 50%;
+    --cosmic-dark: 270 30% 3%;
+    --cosmic-deep: 270 25% 6%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 270 15% 5%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 330 90% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 270 40% 20%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 270 20% 18%;
+    --sidebar-ring: 330 90% 60%;
   }
 }
 
@@ -100,6 +58,101 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    overflow-x: hidden;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.3);
+  }
+
+  .glow-box {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.2), 0 0 60px hsl(var(--primary) / 0.1);
+  }
+
+  .glow-border {
+    border: 1px solid hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.15), inset 0 0 15px hsl(var(--primary) / 0.05);
+  }
+
+  .cosmic-gradient {
+    background: radial-gradient(ellipse at top, hsl(var(--cosmic-deep)) 0%, hsl(var(--cosmic-dark)) 50%, hsl(var(--background)) 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-romantic {
+    @apply rounded-xl p-6 backdrop-blur-sm;
+    background: hsl(var(--card) / 0.6);
+    border: 1px solid hsl(var(--primary) / 0.15);
+    transition: all 0.4s ease;
+  }
+
+  .card-romantic:hover {
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.15);
+    transform: translateY(-4px);
+  }
+}
+
+/* Star background */
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stars::before,
+.stars::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(2px 2px at 20px 30px, hsl(0 0% 100% / 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, hsl(0 0% 100% / 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, hsl(0 0% 100% / 0.4), transparent),
+    radial-gradient(1px 1px at 130px 80px, hsl(0 0% 100% / 0.2), transparent),
+    radial-gradient(2px 2px at 160px 30px, hsl(0 0% 100% / 0.3), transparent);
+  background-size: 200px 200px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+.stars::after {
+  background-size: 300px 300px;
+  animation-delay: 1s;
+  animation-duration: 6s;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) scale(0.5) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+.floating-heart {
+  animation: float-heart 2s ease-out forwards;
+  pointer-events: none;
+  position: fixed;
+  z-index: 50;
 }
