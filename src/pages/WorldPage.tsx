@@ -68,7 +68,7 @@ const WorldPage = () => {
 
         {/* Love Counter */}
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-          <LoveCounter startDate="2024-01-01" />
+          <LoveCounter startDate="2021-07-03" />
         </motion.div>
 
         {/* Letter Section */}
